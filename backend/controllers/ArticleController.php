@@ -359,9 +359,23 @@ class ArticleController extends Controller
 
         if($key==$token_key){
             if(count($article)>0){
-                
+                $articleObg = Article::find()
+                            ->where(['id_art' => $id])
+                            ->one();
 
-                return array('status'=>true,  'data'=>$article);
+                $articleObg->count_views = $articleObg->count_views + 1;
+                $articleObg->save();
+
+                $articleObg = Article::find()
+                            ->where(['id_art' => $id])
+                            ->one();
+
+                return array('status'=>true,  'data'=>$article,
+                            'info'=>
+                                [
+                                    'count_views'=> $articleObg->count_views
+                                ]
+                            );
             }
             else{
                 return array('status'=>false, 'message'=>'Aucun article trouvé.');
