@@ -41,14 +41,31 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
         'urlManager' => [
+
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
+            'suffix' => '.html',
+            
+            //'showScriptName' => false,
             'rules' => [
+                 [
+                    'pattern' => 'article/<id:\d+>',
+                    'route' => 'article/view',
+                ],
+                [
+                    'pattern' => 'article/page/<page:\d+>',
+                    'route' => 'article/index',
+                ],
+                [
+                    'pattern' => 'article/<cat>/<page:\d+>',
+                    //'pattern' => 'article/<cat>',
+                    'route' => 'article/articles-by-categorie',
+                    //'defaults' => ['page' => 1],
+                ],
             ],
         ],
-        */
+        
     ],
     'params' => $params,
 ];
