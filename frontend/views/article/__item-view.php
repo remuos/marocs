@@ -2,6 +2,9 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html ;
+
+$formatter = \Yii::$app->formatter;
+//$formatter->locale = 'fr-FR';
  ?>
 
 		<div class="items">
@@ -21,7 +24,7 @@ use yii\helpers\Html ;
 					</h3>
 					<div class="text-danger sub-info-bordered">
 						<div class="time">
-							<span class="ion-ios-clock-outline"></span> <?= Html::encode($model['date_art']) ?> 
+							<span class="ion-ios-clock-outline"></span> <?= $formatter->asRelativeTime($model['date_art']) ?> 
 						</div>
 					 
 					</div>

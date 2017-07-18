@@ -36,6 +36,16 @@ return [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                [
+                    'class' => 'yii\log\EmailTarget',
+                    'levels' => ['error'],
+                    'categories' => ['yii\db\*'],
+                    'message' => [
+                       'from' => ['remuosoumer@gmail.com'],
+                       'to' => ['soumer120@gmail.com'],
+                       'subject' => 'Database errors at example.com',
+                    ],
+                ],
             ],
         ],
         'errorHandler' => [

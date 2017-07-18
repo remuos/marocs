@@ -9,9 +9,7 @@ use yii\data\ArrayDataProvider;
 <?= 
 	ListView::widget([
 	    'dataProvider' => $listDataProvider,
-	    'itemView' => function ($model, $key, $index, $widget) {
-	    		return $this->render('__item-view',['model'=>$model]);
-	    },
+	    'itemView' => '__item-view',
 	    'layout' => "{items}\n{pager}",
 	    //'summary' => "begin: {begin} - page : {page}- pagecount: {pageCount}-totalcount : {totalCount}- count : {count}- end : {end}",
 	]);

@@ -1,0 +1,27 @@
+<h1> Listes des article </h1>
+
+<article *ngFor="let article of articles">
+	<div class="row">
+		<div class="col-md-3 col-xs-3">
+		<a href="" class="thumbnail" >
+			<img [src]="article.file" alt="" class=" img-responsive">
+		</a>
+			
+		</div>
+		<div class="col-md-9">
+			<h2 class="text-muted titre-art"> {{ article.titre }}</h2>
+			<p>{{ article.titre }}</p>
+		</div>
+	</div>
+	
+</article>
+<style>
+	
+	.titre-art{
+		border-top:1px solid #eee;
+		border-bottom:1px solid #eee;
+		padding: 5px 0;
+		font-size: 20px;
+		margin:0;
+	}
+</style>
